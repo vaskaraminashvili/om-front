@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Http;
 */
 
 Route::get('/', function () {
-$response = Http::get('https://dummyjson.com/products');
-    dd($response->collect());
+//$response = Http::get('https://dummyjson.com/products');
+//    dd($response->collect());
     return view('welcome');
 });
