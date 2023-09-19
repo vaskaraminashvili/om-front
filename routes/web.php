@@ -19,3 +19,10 @@ Route::get('/', function () {
 //    dd($response->collect());
     return view('welcome');
 });
+
+
+Route::get('/test', function () {
+    return view('test');
+
+});
+
