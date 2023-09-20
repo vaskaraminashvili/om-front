@@ -1,6 +1,7 @@
 <div>
    @foreach ($categories as $element)
-   tes
+
+   {{ $element['name'] }}
    <br>
        {{-- expr --}}
    @endforeach

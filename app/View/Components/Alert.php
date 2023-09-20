@@ -16,7 +16,7 @@ class Alert extends Component
      */
     public function __construct()
     {
-        $this->categories = Http::get('http://om-front.test/api/categories')->collect();
+        $this->categories = Http::api()->get('/categories')->collect();
     }
 
     /**
