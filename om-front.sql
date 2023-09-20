@@ -11,7 +11,7 @@
  Target Server Version : 80034
  File Encoding         : 65001
 
- Date: 20/09/2023 14:31:02
+ Date: 20/09/2023 19:56:47
 */
 
 SET NAMES utf8mb4;
@@ -33,15 +33,15 @@ CREATE TABLE `categories`  (
 -- ----------------------------
 INSERT INTO `categories` VALUES (1, 'paretnt 1', 0);
 INSERT INTO `categories` VALUES (2, 'test_2', 0);
-INSERT INTO `categories` VALUES (3, 'sdsfd fsdf', 4);
+INSERT INTO `categories` VALUES (3, 'sdsfd fsdf', 0);
 INSERT INTO `categories` VALUES (4, 'parent 22', 0);
-INSERT INTO `categories` VALUES (5, 'test_5', 1);
-INSERT INTO `categories` VALUES (6, 'test_6', 1);
-INSERT INTO `categories` VALUES (7, 'test_7', 1);
-INSERT INTO `categories` VALUES (8, 'test_8', 1);
-INSERT INTO `categories` VALUES (9, 'test_9', 0);
-INSERT INTO `categories` VALUES (10, 'test_10', 4);
-INSERT INTO `categories` VALUES (11, 'tasdas', 4);
-INSERT INTO `categories` VALUES (12, 'sdsfd fsdf', 4);
+INSERT INTO `categories` VALUES (5, 'test_5', 0);
+INSERT INTO `categories` VALUES (6, 'test_6', 0);
+INSERT INTO `categories` VALUES (7, 'test_7', 4);
+INSERT INTO `categories` VALUES (8, 'test_8', 0);
+INSERT INTO `categories` VALUES (9, 'test_9', 2);
+INSERT INTO `categories` VALUES (10, 'test_10', 2);
+INSERT INTO `categories` VALUES (11, 'tasdas', 0);
+INSERT INTO `categories` VALUES (12, 'sdsfd fsdf', 0);
 
 SET FOREIGN_KEY_CHECKS = 1;
