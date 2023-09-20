@@ -17,10 +17,12 @@ class Categories extends Component
      */
     public function __construct()
     {
-        $this->tree = Cache::remember('tree', 600 ,function () {
-            $this->categories = Http::api()->get('/categories')->json();
-            return $this->buildTree($this->categories);
-        });
+        // $this->tree = Cache::remember('tree', 1 ,function () {
+        //     $this->categories = Http::api()->get('/categories')->json();
+        //     return $this->buildTree($this->categories);
+        // });
+        $this->categories = Http::api()->get('/categories')->json();
+        $this->tree= $this->buildTree($this->categories);
     }
 
 
