@@ -22,6 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/categories', function (Request $request) {
     $categories = DB::table('categories')
     ->select('categories.*')
+    ->orderBy('parent_id', 'asc')
     ->get();
     return $categories;
 });
