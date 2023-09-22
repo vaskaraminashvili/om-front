@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Resources\ProductCollection;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
@@ -25,4 +26,24 @@ Route::get('/categories', function (Request $request) {
     ->orderBy('parent_id', 'asc')
     ->get();
     return $categories;
+});
+
+Route::get('/slides', function (Request $request) {
+    $slides = DB::table('main_slides')
+    ->orderBy('sort', 'asc')
+    ->get();
+    return $slides;
+});
+
+
+
+Route::get('/products', function (Request $request) {
+    $products = DB::table('products')
+    ->addSelect('products.*', 'categories.id', 'categories.name as category_name','merchants.id', 'merchants.name as merchant_name')
+    ->join('categories', 'products.category_id', '=', 'categories.id')
+    ->join('merchants', 'products.merchant_id', '=', 'merchants.id')
+    ->where('products.status',1)
+    ->orderBy('sort', 'asc')
+    ->paginate(15)->withPath('/products');
+    return $products;
 });

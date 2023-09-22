@@ -21,8 +21,11 @@ Route::get('/', function () {
 });
 
 
-Route::get('/test', function () {
-    return view('test');
+Route::get('/products/{category?}', function () {
+    return view('products');
+});
 
+Route::get('/product/{slug?}', function () {
+    return view('products');
 });
 
