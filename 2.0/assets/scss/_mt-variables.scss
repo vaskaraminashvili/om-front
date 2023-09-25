@@ -75,7 +75,7 @@ $sale:                                                      #df3737;
 $slider-bg:                                                 #eef7f9;
 
 // Theme Colors
-$primary:                                                   $yellow;
+$primary:                                                   $yellow !default;
 
 $theme-colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
