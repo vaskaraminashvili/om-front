@@ -6,7 +6,7 @@
         @if (empty($item['children']))
           <li class="nav-item u-header__nav-item" data-event="hover" data-position="left">
 
-            <a href="#" class="nav-link u-header__nav-link font-weight-bold">{{ $item['name'] }}</a>
+            <a href="{{route('products.index', ['category' => $item['name']])}}" class="nav-link u-header__nav-link font-weight-bold">{{ $item['name'] }}</a>
           </li>
         @else
           <!-- Nav Item MegaMenu -->

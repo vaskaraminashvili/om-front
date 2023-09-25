@@ -6,8 +6,8 @@
       <div class="my-md-3">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb mb-3 flex-nowrap flex-xl-wrap overflow-auto overflow-xl-visble">
-            <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1"><a href="../home/index.html">Home</a></li>
-            <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1 active" aria-current="page">Smart Phones & Tablets
+            <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1"><a href="{{route('home')}}">Home</a></li>
+            <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1 active" aria-current="page">{{Str::ucfirst(request()->category)}}
             </li>
           </ol>
         </nav>
@@ -20,7 +20,7 @@
   <div class="container">
     <div class="row mb-8">
       <div class="d-none d-xl-block col-xl-3 col-wd-2gdot5">
-        <x-product-filter/>
+        <x-product-filter :category="$category" :categories="$categories"/>
       </div>
       <div class="col-xl-9 col-wd-9gdot5">
         <x-product-grid/>
@@ -51,37 +51,37 @@
                                 }]'>
           <div class="js-slide">
             <a href="#" class="link-hover__brand">
-              <img class="img-fluid m-auto max-height-50" src="./assets/img/200X60/img1.png"
+              <img class="img-fluid m-auto max-height-50" src="{{asset('/assets/img/200X60/img1.png')}}"
                 alt="Image Description">
             </a>
           </div>
           <div class="js-slide">
             <a href="#" class="link-hover__brand">
-              <img class="img-fluid m-auto max-height-50" src="./assets/img/200X60/img2.png"
+              <img class="img-fluid m-auto max-height-50" src="{{asset('/assets/img/200X60/img2.png')}}"
                 alt="Image Description">
             </a>
           </div>
           <div class="js-slide">
             <a href="#" class="link-hover__brand">
-              <img class="img-fluid m-auto max-height-50" src="./assets/img/200X60/img3.png"
+              <img class="img-fluid m-auto max-height-50" src="{{asset('/assets/img/200X60/img3.png')}}"
                 alt="Image Description">
             </a>
           </div>
           <div class="js-slide">
             <a href="#" class="link-hover__brand">
-              <img class="img-fluid m-auto max-height-50" src="./assets/img/200X60/img4.png"
+              <img class="img-fluid m-auto max-height-50" src="{{asset('/assets/img/200X60/img4.png')}}"
                 alt="Image Description">
             </a>
           </div>
           <div class="js-slide">
             <a href="#" class="link-hover__brand">
-              <img class="img-fluid m-auto max-height-50" src="./assets/img/200X60/img5.png"
+              <img class="img-fluid m-auto max-height-50" src="{{asset('/assets/img/200X60/img5.png')}}"
                 alt="Image Description">
             </a>
           </div>
           <div class="js-slide">
             <a href="#" class="link-hover__brand">
-              <img class="img-fluid m-auto max-height-50" src="./assets/img/200X60/img6.png"
+              <img class="img-fluid m-auto max-height-50" src="{{asset('/assets/img/200X60/img6.png')}}"
                 alt="Image Description">
             </a>
           </div>

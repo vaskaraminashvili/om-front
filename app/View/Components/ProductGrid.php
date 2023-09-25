@@ -18,7 +18,8 @@ class ProductGrid extends Component
     public $paginator;
     public function __construct()
     {
-        $this->productsData = Http::api()->get('/products?page='.request()->get('page'))->object();
+        $category = request()->category;
+        $this->productsData = Http::api()->get('/products/'.$category.'?page='.request()->get('page'))->object();
         $this->paginator = new LengthAwarePaginator(
             $this->productsData->data, // The items to display on the current page
             $this->productsData->total, // Total number of items in the collection

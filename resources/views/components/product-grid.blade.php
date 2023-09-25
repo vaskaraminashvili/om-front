@@ -1,6 +1,6 @@
         <!-- Shop-control-bar Title -->
         <div class="d-block d-md-flex flex-center-between mb-3">
-          <h3 class="font-size-25 mb-2 mb-md-0">Smart Phones & Tablets</h3>
+          <h3 class="font-size-25 mb-2 mb-md-0">{{request()->category}}</h3>
           <p class="font-size-14 text-gray-90 mb-0">Showing {{ $paginator->firstItem() }}–{{ $paginator->lastItem() }} of {{ $paginator->total() }} results</p>
         </div>
         <!-- End shop-control-bar Title -->
@@ -104,7 +104,7 @@
                             class="text-blue font-weight-bold">{{ $item->title }}</a></h5>
                         <div class="mb-2">
                           <a href="/product/{{ $item->slug }}" class="d-block text-center"><img
-                              class="img-fluid" src="./assets/img/212X200/img{{ rand(1,8) }}.jpg" alt="Image Description"></a>
+                              class="img-fluid" src="{{asset('./assets/img/212X200/img'.rand(1,8). '.jpg')}}" alt="Image Description"></a>
                         </div>
                         <div class="flex-center-between mb-1">
                             <div class="prodcut-price d-flex align-items-center position-relative">

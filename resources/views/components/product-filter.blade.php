@@ -1,3 +1,5 @@
+@props(['category' => '' , 'categories' => ''])
+
 <div class="mb-8 border border-width-2 border-color-3 borders-radius-6">
     <!-- List -->
     <ul id="sidebarNav" class="list-unstyled mb-0 sidebar-navbar">
@@ -11,43 +13,31 @@
         <div id="sidebarNav1Collapse" class="collapse" data-parent="#sidebarNav">
           <ul id="sidebarNav1" class="list-unstyled dropdown-list">
             <!-- Menu List -->
-            <li><a class="dropdown-item" href="#">Accessories<span
-                  class="text-gray-25 font-size-12 font-weight-normal"> (56)</span></a></li>
-            <li><a class="dropdown-item" href="#">Cameras & Photography<span
-                  class="text-gray-25 font-size-12 font-weight-normal"> (11)</span></a></li>
-            <li><a class="dropdown-item" href="#">Computer Components<span
-                  class="text-gray-25 font-size-12 font-weight-normal"> (22)</span></a></li>
-            <li><a class="dropdown-item" href="#">Gadgets<span
-                  class="text-gray-25 font-size-12 font-weight-normal"> (5)</span></a></li>
-            <li><a class="dropdown-item" href="#">Home Entertainment<span
-                  class="text-gray-25 font-size-12 font-weight-normal"> (7)</span></a></li>
-            <li><a class="dropdown-item" href="#">Laptops & Computers<span
-                  class="text-gray-25 font-size-12 font-weight-normal"> (42)</span></a></li>
-            <li><a class="dropdown-item" href="#">Printers & Ink<span
-                  class="text-gray-25 font-size-12 font-weight-normal"> (63)</span></a></li>
-            <li><a class="dropdown-item" href="#">Smart Phones & Tablets<span
-                  class="text-gray-25 font-size-12 font-weight-normal"> (11)</span></a></li>
-            <li><a class="dropdown-item" href="#">TV & Audio<span
-                  class="text-gray-25 font-size-12 font-weight-normal"> (66)</span></a></li>
-            <li><a class="dropdown-item" href="#">Video Games & Consoles<span
-                  class="text-gray-25 font-size-12 font-weight-normal"> (31)</span></a></li>
+            @foreach ($categories as $item)
+            <li><a class="dropdown-item" href="{{ route('products.index', ['category'=> $item->name]) }}">{{$item->name}}</a></li>
+              {{-- expr --}}
+            @endforeach
+
             <!-- End Menu List -->
           </ul>
         </div>
       </li>
-      <li>
-        <a class="dropdown-current active" href="#">Smart Phones & Tablets <span
-            class="text-gray-25 font-size-12 font-weight-normal"> (50)</span></a>
-
-        <ul class="list-unstyled dropdown-list">
-          <!-- Menu List -->
-          <li><a class="dropdown-item" href="#">Smartphones<span
-                class="text-gray-25 font-size-12 font-weight-normal"> (30)</span></a></li>
-          <li><a class="dropdown-item" href="#">Tablets<span
+        @if (!empty($category->children))
+        <li>
+          <a class="dropdown-current active" href="#">{{$category->name}}</a>
+          <ul class="list-unstyled dropdown-list">
+            <!-- Menu List -->
+            <li><a class="dropdown-item" href="#">Smartphones<span
+              class="text-gray-25 font-size-12 font-weight-normal"> (30)</span></a></li>
+              <li><a class="dropdown-item" href="#">Tablets<span
                 class="text-gray-25 font-size-12 font-weight-normal"> (20)</span></a></li>
-          <!-- End Menu List -->
-        </ul>
-      </li>
+                <!-- End Menu List -->
+          </ul>
+        </li>
+        @else
+        <li>
+          <a class="dropdown-item active" href="#">{{$category->name}}</a>
+        @endif
     </ul>
     <!-- End List -->
   </div>
@@ -240,7 +230,7 @@
         <div class="row">
           <div class="col-auto">
             <a href="../shop/single-product-fullwidth.html" class="d-block width-75">
-              <img class="img-fluid" src="./assets/img/300X300/img1.jpg" alt="Image Description">
+              <img class="img-fluid" src="{{asset('/assets/img/300X300/img1.jpg')}}" alt="Image Description">
             </a>
           </div>
           <div class="col">
@@ -264,7 +254,7 @@
         <div class="row">
           <div class="col-auto">
             <a href="../shop/single-product-fullwidth.html" class="d-block width-75">
-              <img class="img-fluid" src="./assets/img/300X300/img3.jpg" alt="Image Description">
+              <img class="img-fluid" src="{{asset('/assets/img/300X300/img3.jpg')}}" alt="Image Description">
             </a>
           </div>
           <div class="col">
@@ -287,7 +277,7 @@
         <div class="row">
           <div class="col-auto">
             <a href="../shop/single-product-fullwidth.html" class="d-block width-75">
-              <img class="img-fluid" src="./assets/img/300X300/img5.jpg" alt="Image Description">
+              <img class="img-fluid" src="{{asset('/assets/img/300X300/img5.jpg')}}" alt="Image Description">
             </a>
           </div>
           <div class="col">
@@ -310,7 +300,7 @@
         <div class="row">
           <div class="col-auto">
             <a href="../shop/single-product-fullwidth.html" class="d-block width-75">
-              <img class="img-fluid" src="./assets/img/300X300/img6.jpg" alt="Image Description">
+              <img class="img-fluid" src="{{asset('/assets/img/300X300/img6.jpg')}}" alt="Image Description">
             </a>
           </div>
           <div class="col">
@@ -334,7 +324,7 @@
         <div class="row">
           <div class="col-auto">
             <a href="../shop/single-product-fullwidth.html" class="d-block width-75">
-              <img class="img-fluid" src="./assets/img/300X300/img10.png" alt="Image Description">
+              <img class="img-fluid" src="{{asset('/assets/img/300X300/img10.png')}}" alt="Image Description">
             </a>
           </div>
           <div class="col">
